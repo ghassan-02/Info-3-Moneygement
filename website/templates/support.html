@@ -1,0 +1,37 @@
+{% extends 'base1.html' %}
+
+{% block link %}
+<link rel="stylesheet" href="static/cssprivacysupport/stylesheet.css">
+<link rel="stylesheet" href="static/cssprivacysupport/stylesheet_mobile.css">
+<link rel="icon" href="static/img/logo.png">
+{%endblock%}
+
+{% block title %}
+<title>Support - Moneygement</title>
+{% endblock %}
+
+
+{% block main %}
+<form>
+    <fieldset>
+        <label for='support_email'>Contact E-Mail</label>
+        <input id='support_email' type="text" name='support_email'
+            placeholder="E-Mail...">
+    </fieldset>
+
+   
+
+    <fieldset>
+        <label for='support_subject'>Subject</label>
+        <input id='support_subject' type="text" name='support_subject' placeholder="Subject...">
+    </fieldset>
+
+    <fieldset>
+        <label for='support_message'>Message</label>
+        <textarea id='support_message'  type="text" name='support_message' placeholder="Message..." maxlength="2000"></textarea>
+    </fieldset>
+
+    <a class='submit_btn' href='#'><button type="submit">Submit</button></a>
+
+</form>
+{% endblock %}

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="../static/cssexternalpages/stylesheet.css">
+    <link rel="stylesheet" href="../static/cssexternalpages/stylesheet_mobile.css">
+    <link rel="icon" href="../static/img/logo.png">
+    <title>Edit an Account - Moneygement</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        crossorigin="anonymous" />
+</head>
+
+<body>
+    <header>
+        <div class="navigation">
+            <img src="../static/img/logo.png" alt="Moneygement logo">
+            <ul>
+                <li><a href="/YourAccounts" id="logout_button">Cancel</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div>
+        {% with messages=get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        {% for category, message in messages %}
+        {% if category == 'error' %}
+        <div class="alert alert-danger alter-dismissable fade show" role="alert">
+            {{message}}
+            <button type="button" class="close" data-dismiss="alert">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        {% else %}
+        <div class="alert alert-success alter-dismissable fade show" role="alert">
+            {{message}}
+            <button type="button" class="close" data-dismiss="alert">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        {% endif %}
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+    </div>
+
+    <main>
+        <div class='title_container'>
+            <div>
+                <h3 id='total_balance_username'>Edit Account
+                </h3>
+                <h6 id='notification_count_title'>Account: {{ a.name }}
+                </h6>
+            </div>
+
+        </div>
+
+        <!-- ADD ACCOUNT VALUES IN INPUT VALUES, SEE BELOW -->
+        <form action='' method="POST">
+            <div class="edit_fieldset_container">
+                <fieldset>
+                    <label for='edit_name'>Account Name</label>
+                    <input id='edit_name' type="text" name='edit_name' placeholder="Enter a name for your account..."
+                        value='{{ a.name }}'> <!-- Notice the value here -->
+                </fieldset>
+
+                <fieldset>
+                    <label for='edit_type'>Account Type</label>
+                    <select id='edit_type' name='edit_type'>
+                        <!-- Value must be one of those below !! -->
+                        <option value='bank'>Bank Account</option>
+                        <option value='online'>Online Account</option>
+                        <option value='cash'>Cash</option>
+                        <option value='other'>Other</option>
+                    </select>
+                </fieldset>
+
+                <fieldset>
+                    <label for='edit_currency'>Account Currency</label>
+                    <select id='edit_currency' name='edit_currency'>
+                        <option value='usd'>USD</option>
+                        
+                    </select>
+                </fieldset>
+
+                <fieldset>
+                    <label for='edit_balance'>Account Balance</label>
+                    <input id='edit_balance' type="number" name='edit_balance'
+                        placeholder="Enter your account's current balance..." value='{{ a.balance }}'>
+                </fieldset>
+
+                <fieldset>
+                    <label for='edit_description'>Account Description</label>
+                    <textarea id='edit_description' name='edit_description'
+                        placeholder="Enter a description for your account..." >{{ a.description }}</textarea>
+                </fieldset>
+
+            </div>
+            <a href="/EditAccount/{{ a.id }}"><button class="save_button" type="submit">Save Changes</button></a>
+        </form>
+
+
+    </main>
+
+    <footer>
+        <div>
+            <p>&copy Moneygement</br>All rights reserved</p>
+            <a href="#">Report a problem</a>
+        </div>
+    </footer>
+</body>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+
+</html>

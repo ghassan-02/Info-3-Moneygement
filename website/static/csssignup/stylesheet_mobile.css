@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+@media(max-width: 1000px){
+    body{
+        margin: 0%;
+        font-family: PT Sans, open-sans;
+        display: flexbox;
+        flex-direction: column;
+    }
+
+    .navigation{
+        display: flex;
+        flex-direction: column;
+        background-color: rgb(0, 0, 0);
+        margin: 0%;
+        margin-bottom: 0rem;
+        justify-content:space-between;
+        align-items: center;
+    }
+
+
+    .navigation img{
+        height: 7rem;
+        width: 11rem;
+    }
+
+    .navigation ul{
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+        margin-right: 2rem;
+        flex-wrap: nowrap;
+    }
+
+    .navigation ul a{
+        text-decoration: none;
+        color: white;
+        font-size: large;
+        margin: 0rem 0.5rem;
+        padding: 0.25rem;
+
+    }
+
+    .navigation ul a:hover{
+    color: #626f2d;
+    }
+
+    main{
+        display: flex !important;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #img_section{
+        display: none;
+    }
+
+    #form_section{
+        display: flex;
+        justify-self: center;
+        align-items: center;
+        margin: auto;
+    }
+
+    #form_section form{
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+    }
+
+    #form_section h1{
+        font-size: xx-large;
+        margin: 5rem 0rem;
+    }
+
+    #form_section p{
+        color: grey;
+        margin-bottom: 5rem;
+    }
+    #form_section p a{
+        color: #626f2d;
+    }
+
+    #form_section label{
+        font-size:1rem;
+    }
+
+    .subcontainer{
+        margin: auto;
+        max-width: 100vw;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    .subcontainer fieldset{
+        display: flex;
+        border: none;
+        margin: 2rem 0rem;
+        flex-direction: column;
+    }
+
+    .subcontainer fieldset input{
+        border: none;
+        border-bottom: solid 0.1rem black;
+        border-radius: 0%;
+        width: 15rem;
+        height: 2rem;
+        color: #626f2d;
+        caret-color: #626f2d;
+        background-color: transparent;
+    }
+
+    #country_fieldset{
+        display: flex;
+        border: none;
+        margin: 2rem 0rem;
+        flex-direction: column;
+    }
+
+    #country{
+        border: none;
+        border-bottom: solid 0.1rem black;
+        border-radius: 0%;
+        width: 15rem;
+        height: 2rem;
+        color: #626f2d;
+        margin: auto;
+        background-color: transparent;
+    }
+
+    #country option, #country{
+        font-size: 1rem;
+        line-height: 1rem;
+    }
+
+    .subcontainer fieldset input::placeholder{
+        font-size: 1rem;
+        line-height: 1rem;
+    }
+
+    #createaccount_button{
+        background-color: transparent;
+        border: none;
+        font-size: medium;
+        border: solid 0.1rem #626f2d;
+        padding: 0.25rem 1rem;
+        width: 6rem;
+        margin: auto;
+    }
+
+    #createaccount_button:hover{
+        color: #626f2d;
+    }
+
+    label{
+        margin-bottom: 0.5rem;
+    }
+
+    #privacypolicy_fieldset{
+        margin: auto;
+        display: flex;
+        border: none;
+        margin: 2rem 0rem;
+        flex-direction: row;
+    }
+
+    #privacypolicy_fieldset label{
+        margin-bottom: 0rem;
+    }
+
+    #privacypolicy_fieldset label a{
+        color: #626f2d;
+    }
+
+    input[type=checkbox] + label {
+        display: block;
+        margin: 0.2em;
+        cursor: pointer;
+        padding: 0.2em;
+      }
+      
+    input[type=checkbox] {
+        display: none;
+      }
+      
+    input[type=checkbox] + label:before {
+        content: "\2714";
+        border: 0.1em solid #000;
+        display: inline;
+        padding-left: 0.2em;
+        padding-right: 0.2em;
+        padding-bottom: 0.05em;
+        padding-top: 0.05em;
+        margin-right: 0.2em;
+        color: transparent;
+        transition: .2s;
+      }
+      
+    input[type=checkbox] + label:active:before {
+        transform: scale(0);
+      }
+      
+    input[type=checkbox]:checked + label:before {
+        background-color: #626f2d;
+        border-color: #626f2d;
+        color: #fff;
+      }
+      
+    input[type=checkbox]:disabled + label:before {
+        transform: scale(1);
+        border-color: #aaa;
+      }
+      
+    input[type=checkbox]:checked:disabled + label:before {
+        transform: scale(1);
+        background-color: #bfb;
+        border-color: #bfb;
+      }
+
+    footer div{
+        display: flex;
+        margin: 0%;
+        background-color: black;
+        height: 6rem;
+        color: gray;
+        font-size: smaller;
+        flex-direction: column;
+        align-items: center;
+        vertical-align: middle;
+    }
+
+    footer div a{
+        color: #626f2d;
+    }
+
+    .alert{
+        margin: 0% !important;
+        margin-bottom: 0.5rem !important;
+    }
+}

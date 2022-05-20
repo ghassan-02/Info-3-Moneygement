@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+@media(min-width: 1001px){
+
+
+    body{
+        margin: 0%;
+        font-family: PT Sans, open-sans;
+        display: flex;
+        flex-direction: column;
+    }
+
+    hr{
+        background-color: #626f2d;
+        width: 100%;
+    }
+
+    .privacy_title{
+        margin-bottom: 3rem;
+        color: #626f2d;
+    }
+
+    .navigation{
+        display: flex;
+        flex-direction: row;
+        background-color: rgb(0, 0, 0);
+        margin: 0%;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+
+    .navigation img{
+        height: 7rem;
+        width: 11rem;
+    }
+
+    .navigation ul{
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+        margin-right: 2rem;
+        flex-wrap: wrap;
+    }
+
+    .navigation ul a{
+        text-decoration: none;
+        color: white;
+        font-size: large;
+        margin: 0rem 1rem;
+    }
+
+    .navigation ul a:hover{
+    color: #626f2d;
+    }
+
+    main{
+        display: flex !important;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: -0.25rem;
+        padding: 3rem 6rem;
+    }
+    
+
+    form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    label{
+        font-size:1rem;
+    }
+
+
+    fieldset{
+        display: flex;
+        border: none;
+        margin: 2rem 0rem;
+        flex-direction: column;
+    }
+
+
+
+    input, textarea{
+        border: none;
+        border-bottom: solid 0.1rem black;
+        border-radius: 0%;
+        width: 25rem;
+        height: 2rem;
+        color: #626f2d;
+        caret-color: #626f2d;
+    }
+
+    input::placeholder, textarea::placeholder{
+        font-size: 1rem;
+        line-height: 1rem;
+    }
+
+    #support_message{
+        min-height: 7rem;
+        max-height: 10rem;
+        max-width: 25rem;
+        min-width: 25rem;
+    }
+
+    .submit_btn button{
+        background-color: transparent;
+        border: none;
+        font-size: medium;
+        border: solid 0.1rem #626f2d;
+        padding: 0.25rem 1rem;
+    }
+
+    .submit_btn button:hover{
+        color: #626f2d;
+    }
+    
+    footer div{
+        display: flex;
+        margin: 0%;
+        background-color: black;
+        height: 6rem;
+        color: gray;
+        font-size: smaller;
+        flex-direction: column;
+        align-items: center;
+        vertical-align: middle;
+    }
+
+    footer div a{
+        color: #626f2d;
+    }
+    .alert{
+        margin: 0% !important;
+    }
+
+}

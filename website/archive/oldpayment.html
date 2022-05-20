@@ -1,0 +1,158 @@
+{% extends 'base2.html' %}
+
+{% block section %}
+<section class='payments_main_buttons'>
+    <a href='#'><button type='button' data-toggle="modal" data-target="#add_payment_modal">Add a payment
+            <img src='../static/img/add.svg'></button></a>
+</section>
+
+<!-- FORM USED TO GET INFORMATION AND ADD NEW PAYMENTS -->
+<!-- NOT DONE YET, NEEDS TO BE MODIFIED TO SUPPORT RECURRING PAYMENTS -->
+<div class="modal fade" id="add_payment_modal" data-backdrop="static" tabindex="-1" role="dialog"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Add a Payment</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action='' method="POST">
+                <div class="modal-body">
+                    <fieldset>
+                        <label for='payment_input_amount'>Payment Amount</label>
+                        <input id='payment_input_amount' type="number" name='payment_input_amount' placeholder="Amount">
+                    </fieldset>
+
+                    <fieldset>
+                        <label for='payment_input_type'>Payment Type</label>
+                        <select id='payment_input_type' name='payment_input_type'>
+                            <option value='one_time'>One Time</option>
+                            <option value='recurring'>Recurring</option>
+                        </select>
+                    </fieldset>
+
+                    <fieldset>
+                        <label for='payment_input_currency'>Payment Currency</label>
+                        <select id='payment_input_currency' name='payment_input_currency'>
+                            <option value='usd'>USD</option>
+                            <option value='eur'>EUR</option>
+                            <option value='lbp'>LBP</option>
+                        </select>
+                    </fieldset>
+
+                    <fieldset>
+                        <label for='payment_input_duedate'>Payment Due Date</label>
+                        <input id='payment_input_duedate' type="date" name='payment_input_duedate'>
+                    </fieldset>
+
+                    <fieldset>
+                        <label for='payment_input_description'>Payment Description</label>
+                        <textarea id='payment_input_description' name='payment_input_description'></textarea>
+
+                    </fieldset>
+
+                </div>
+                <div class="modal-footer">
+                    <a class='payment_btn delete_btn' href='#'><button type="button"
+                            data-dismiss="modal">Cancel</button></a>
+                    <a class='payment_btn' href='#'><button type="submit">Add Payment</button></a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+<section class='payments_container'>
+    <!-- USE A FOR LOOP TO CHECK EACH USER PAYMENT AND USE IF STATEMENTS TO SET THE 
+    CORRECT CARD (EXPIRED/NOT EXPIRED), FOLLOWING ARE TWO EXAMPLES -->
+
+    <!-- IF PAYMENT HASN'T EXPIRED USE THE FOLLOWING CARD-->
+    <div class='payment_card'>
+        <h5 class='payment_subtitle'>Amount</h5>
+        <div class='payment_title'>
+            <div class='payment_amount'>
+                <h4>
+                    <!-- {{ payment_amount }} -->17
+                </h4>
+                <p>
+                    <!-- {{ payment_currency}} -->USD
+                </p>
+            </div>
+            <h6>
+                <!-- {{ payment_type }} -->Recurring Payment
+            </h6>
+        </div>
+        <hr>
+        <div class='payment_info'>
+            <h5 class='payment_subtitle'>Description</h5>
+            <p class='payment_description'>
+                <!-- {{ description_text }} -->Netflix monthly payment
+            </p>
+        </div>
+        <div class='payment_status'>
+            <h5 class='payment_subtitle'>Status</h5>
+            <p class='upcoming'>
+                <!-- {{ payment_status }} -->Upcoming
+            </p>
+        </div>
+        <div class='payment_date'>
+            <h5 class='payment_subtitle'>Due Date</h5>
+            <p>
+                <!-- {{ payment_due_date }} -->31-08-2022
+            </p>
+        </div>
+        <hr>
+        <div class='payment_buttons'>
+            <a class='payment_btn' href='#'><button type='button'>Set as Paid</button></a>
+            <a class='payment_btn delete_btn' href='#'><button type='button'>Delete</button></a>
+        </div>
+    </div>
+
+    <!-- IF PAYMENT IS PAST DUE USE THE FOLLOWING CARD-->
+    <div class='payment_card'>
+        <h5 class='payment_subtitle'>Amount</h5>
+        <div class='payment_title'>
+            <div class='payment_amount'>
+                <h4>
+                    <!-- {{ payment_amount }} -->545
+                </h4>
+                <p>
+                    <!-- {{ payment_currency}} -->USD
+                </p>
+            </div>
+            <h6>
+                <!-- {{ payment_type }} -->One-Time Payment
+            </h6>
+        </div>
+        <hr>
+        <div class='payment_info'>
+            <h5 class='payment_subtitle'>Description</h5>
+            <p class='payment_description'>
+                <!-- {{ description_text }} -->Car engine repair cost
+            </p>
+        </div>
+        <div class='payment_status'>
+            <h5 class='payment_subtitle'>Status</h5>
+            <p class='past-due'>
+                <!-- {{ payment_status }} -->Past Due
+            </p>
+        </div>
+        <div class='payment_date'>
+            <h5 class='payment_subtitle'>Due Date</h5>
+            <p>
+                <!-- {{ payment_due_date }} -->31-01-2022
+            </p>
+        </div>
+        <hr>
+        <div class='payment_buttons'>
+            <a class='payment_btn' href='#'><button type='button'>Set as Paid</button></a>
+            <a class='payment_btn delete_btn' href='#'><button type='button'>Delete</button></a>
+        </div>
+    </div>
+
+</section>
+{% endblock %}

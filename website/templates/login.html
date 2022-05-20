@@ -1,0 +1,54 @@
+{% extends 'base1.html' %}
+
+{% block link %}
+<link rel="stylesheet" href="static/csslogin/stylesheet.css">
+<link rel="stylesheet" href="static/csslogin/stylesheet_mobile.css">
+<link rel="icon" href="static/img/logo.png">
+{%endblock%}
+
+{% block title %}
+<title>Login - Moneygement</title>
+{% endblock %}
+
+
+{% block main %}
+    <section id="img_section">
+
+        <div id="img_1">
+            <div class="overlay">
+                <div class="img_caption">
+                    <h1>Reach financial freedom...</h1>
+                    <h3>using the most powerful money management tool</h3>
+                </div>
+            </div>
+            <img id="img_pc" src="static/img/login_img (3).jpg">
+        </div>
+
+    </section>
+
+    <section id="form_section">
+        <form action="" method="POST">
+            <h1>Welcome Back !</h1>
+            <fieldset id="username_fieldset">
+                <label for="username">Username</label>
+                <input id="username" type="email" name="email" placeholder="E-mail" required>
+            </fieldset>
+
+            <fieldset id="password_fieldset">
+                <label for="password">Password</label>
+                <input id="password" type="password" name="password" placeholder="Password" required>
+            </fieldset>  
+
+                
+            <fieldset id="privacypolicy_fieldset">
+                <input type="checkbox" id="privacypolicy_checkbox" value="remember_me_fieldset" >
+                <label for="privacypolicy_checkbox">Remember Me</label>
+            </fieldset>
+
+
+            <button type="submit" id="login_button">Login</button>
+            <p>or <a href="/signup">create an account</a></p>
+            <p><a href="">Forgot Password?</a></p>
+        </form>
+    </section>
+{% endblock %}

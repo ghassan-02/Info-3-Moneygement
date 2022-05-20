@@ -1,0 +1,686 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+
+@media(max-width: 1000px) {
+
+
+    @keyframes blink_red {
+        0% {
+            color: white;
+            background-color: darkred;
+        }
+
+        50% {
+            color: red;
+            background-color: transparent;
+        }
+
+        100% {
+            color: white;
+            background-color: darkred;
+        }
+    }
+
+
+    body {
+        display: flexbox;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        margin: 0%;
+        font-family: PT Sans, open-sans;
+    }
+
+    #logout_button {
+        padding: 0.25rem;
+        border-radius: 2.5%;
+    }
+
+    #logout_button:hover {
+        background-color: darkred;
+        color: red;
+        animation: blink_red 3s ease-in-out;
+        animation-iteration-count: infinite;
+        padding: 0.25rem;
+        border-radius: 2.5%;
+    }
+
+    .navigation {
+        display: flex;
+        flex-direction: column;
+        background-color: rgb(0, 0, 0);
+        margin: 0% !important;
+        margin-bottom: 2.5rem;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+
+    .navigation img {
+        height: 7rem;
+        width: 11rem;
+    }
+
+    .navigation ul {
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+        margin-right: 2rem;
+        flex-wrap: nowrap;
+    }
+
+    .navigation ul a {
+        text-decoration: none;
+        color: white;
+        font-size: large;
+        margin: 0rem 0.5rem;
+        padding: 0.25rem;
+    }
+
+    .navigation ul a:hover {
+        color: #626f2d;
+    }
+
+    main {
+        display: flex !important;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        margin-bottom: -0.25rem;
+        height: 100vh;
+    }
+
+    .main_balance_container {
+        display: flex;
+        flex-direction: column;
+        background-color: #626f2d;
+        color: white;
+        padding: 1rem;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .separator {
+        display: none;
+        height: 2.5rem;
+        border: solid 0.5px black;
+    }
+
+    #total_balance_username {
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
+
+    #total_balance_title {
+        font-weight: 600;
+    }
+
+    #total_balance {
+        display: flex;
+        flex-direction: row;
+    }
+
+    #total_balance h5 {
+        margin-left: 0.25rem;
+        font-weight: 300;
+    }
+
+    #notification_count_title {
+        font-size: 1rem;
+        font-weight: 300;
+    }
+
+    .dashboard_content {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+
+    }
+
+    .sections_container hr {
+        display: none;
+        margin: 0px 3rem;
+        background-color: #626f2d;
+    }
+
+    .sections_container {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: center;
+        width: 100%;
+        height: fit-content;
+        background-color: black;
+        color: white;
+        padding: 0.5rem;
+    }
+
+    .section_name_container {
+        padding-bottom: 0.1rem;
+        margin: 0.1rem 0rem;
+        border-bottom: #626f2d solid 1px;
+    }
+
+    .section_name {
+        font-size: 1.25rem;
+        font-weight: 300;
+
+    }
+
+    .section_name a {
+        text-decoration: none;
+        color: white;
+    }
+
+    .section_name a:hover {
+        text-decoration: none;
+        color: #626f2d;
+    }
+
+    footer div {
+        display: flex;
+        margin: 0%;
+        background-color: black;
+        height: 6rem;
+        color: gray;
+        font-size: smaller;
+        flex-direction: column;
+        align-items: center;
+        vertical-align: middle;
+    }
+
+
+    .internal_container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow-y: scroll;
+        overflow-x: hidden;
+
+    }
+
+    .account_card {
+        border-radius: 4px;
+        box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
+        border-color: rgba(223, 225, 229, 0);
+        display: flex;
+        flex-direction: row;
+        width: 90%;
+        margin: 1rem;
+        padding: 1rem;
+        padding-right: 0%;
+    }
+
+    .account_section1 {
+        width: 90%;
+        margin: 0%;
+    }
+
+    .account_section2 {
+        display: none;
+        width: 25%;
+        margin: 0%;
+        border-left: solid 0.75px black;
+        padding: 1rem;
+        margin: 0.5rem;
+    }
+
+    .account_title {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: baseline;
+        border-bottom: solid 0.75px black;
+        text-transform: capitalize;
+    }
+
+    .account_title_text {
+        font-size: 1.5rem;
+        margin-right: 1rem;
+        font-weight: 500;
+    }
+
+    .account_type {
+        font-size: 1rem;
+        font-weight: 300;
+        font-style: italic;
+        text-transform: capitalize;
+    }
+
+    .account_info {
+        display: flex;
+        flex-direction: column;
+        margin: 0.5rem 0rem;
+    }
+
+    .account_description_title,
+    .account_bal_title {
+        text-decoration: underline;
+        font-weight: 500;
+    }
+
+    .account_description,
+    .payment_description {
+        height: 2.75rem;
+        overflow-y: scroll;
+        font-weight: 100;
+    }
+
+    .account_bal_cur {
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+    }
+
+    .account_balance {
+        font-size: 1.5rem;
+        font-weight: 500;
+        margin-right: 0.25rem;
+    }
+
+    .account_currency {
+        font-size: 1rem;
+        font-weight: 100;
+        text-transform: uppercase;
+    }
+
+    .account_buttons {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        border-top: solid 0.75px black;
+        padding-top: 0.5rem;
+    }
+
+    .account_btn button {
+        border: none;
+        background-color: transparent;
+        color: #626f2d;
+    }
+
+    .account_btn button:hover {
+        text-decoration: underline;
+    }
+
+    .delete_btn button {
+        color: red !important;
+    }
+
+    .account_img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .account_img img {
+        flex-grow: 1;
+    }
+
+    .account_main_buttons,
+    .payments_main_buttons {
+        display: flex;
+        flex-direction: column;
+        padding: 2rem 5rem;
+        width: 100%;
+    }
+
+    .account_main_buttons button,
+    .payments_main_buttons button {
+        display: flex;
+        flex-direction: row;
+        border: 1px #626f2d solid;
+        justify-content: space-around;
+        align-items: center;
+        border: none;
+        width: 16rem;
+        height: 2rem;
+        background-color: #626f2d;
+        color: white;
+    }
+
+
+    .account_main_buttons button:hover,
+    .payments_main_buttons button:hover {
+        background-color: transparent;
+        color: #626f2d;
+        border: 1px #626f2d solid;
+        box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
+    }
+
+    .account_main_buttons a,
+    .payments_main_buttons a {
+        margin-bottom: 0.25rem;
+
+    }
+
+    .account_main_buttons a:hover,
+    .payments_main_buttons a:hover {
+        text-decoration: none;
+    }
+
+
+    .payments_container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        width: 100%;
+        height: 100%;
+        padding: 2rem;
+    }
+
+    .message_container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        width: 100%;
+        height: 100%;
+        padding-bottom: 1cm
+    }
+
+    .payment_card {
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
+        padding: 2rem;
+        margin: 1rem 0rem;
+        width: 20rem;
+        height: 28rem
+    }
+
+    .message_card {
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
+        padding: 2rem;
+        margin: 1rem 0rem;
+        width: 20rem;
+        height: 28rem
+    }
+
+
+    .payment_card::-webkit-scrollbar,
+    .account_card::-webkit-scrollbar {
+        display: none;
+    }
+
+    .payment_card,
+    .account_card {
+        -ms-overflow-style: none;
+        /* IE and Edge */
+        scrollbar-width: none;
+        /* Firefox */
+    }
+
+    .past-due {
+        color: red;
+    }
+
+    .upcoming {
+        color: blue;
+    }
+
+    .payment_title {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .payment_amount {
+        display: flex;
+        flex-direction: column;
+        overflow-x: scroll;
+    }
+
+    .payment_type {
+        text-transform: capitalize;
+    }
+
+    .messager_name {
+        display: flex;
+        flex-direction: column;
+        overflow-x: auto;
+    }
+
+    .payment_title .payment_amount h4 {
+        font-size: 2rem;
+        font-weight: 500;
+        margin-right: 0.25rem;
+    }
+
+    .payment_title .payment_amount p {
+        font-size: 1rem;
+        font-weight: 300;
+        margin-right: 0.25rem;
+        text-transform: uppercase;
+    }
+
+    .payment_title h6 {
+        font-size: 0.75rem;
+        font-style: italic;
+        font-weight: 300;
+        padding-left: 1rem;
+        border-left: solid black 1px;
+    }
+
+    .payment_info,
+    .payment_status {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .payment_info {
+        padding: 0.5rem 0rem;
+    }
+
+    .message_info {
+        padding-bottom: -10cm;
+    }
+
+    .payment_description {
+        height: 2rem;
+        overflow-wrap: break-word;
+        overflow-y: scroll;
+
+    }
+
+    .message_content {
+        height: 15rem;
+        overflow-y: auto;
+    }
+
+    .payment_subtitle {
+        font-size: 1rem;
+        font-weight: 600;
+        text-decoration: underline;
+    }
+
+    .message_subtitle {
+        font-size: 1rem;
+        font-weight: 600;
+        text-decoration: underline;
+    }
+
+    .payment_buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: baseline;
+    }
+
+    .message_buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: normal;
+        padding: 1rem;
+    }
+
+    .payment_btn button {
+        color: #626f2d;
+        background-color: transparent;
+        border: none;
+    }
+
+    .payment_btn button:hover {
+        text-decoration: underline;
+    }
+
+    .payment_card hr {
+        padding: 0rem 1rem;
+        margin: 0px;
+        background-color: black;
+    }
+
+
+    #add_account_modal .modal-dialog .modal-content form .modal-body,
+    #add_recurring_payment_modal .modal-dialog .modal-content form .modal-body,
+    #add_single_payment_modal .modal-dialog .modal-content form .modal-body {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #add_account_modal .modal-dialog .modal-content form .modal-body fieldset,
+    #add_recurring_payment_modal .modal-dialog .modal-content form .modal-body fieldset,
+    #add_single_payment_modal .modal-dialog .modal-content form .modal-body fieldset {
+        display: flex;
+        flex-direction: column;
+        margin: 1rem 0.5rem;
+    }
+
+    #add_account_modal .modal-dialog .modal-content form .modal-body fieldset input,
+    #add_recurring_payment_modal .modal-dialog .modal-content form .modal-body fieldset input,
+    #add_single_payment_modal .modal-dialog .modal-content form .modal-body fieldset input {
+        border: none;
+        border-bottom: solid 0.1rem black;
+        border-radius: 0%;
+        height: 2rem;
+        color: #626f2d;
+        caret-color: #626f2d;
+        background-color: transparent;
+    }
+
+    #add_account_modal .modal-dialog .modal-content form .modal-body fieldset select,
+    #add_recurring_payment_modal .modal-dialog .modal-content form .modal-body fieldset select,
+    #add_single_payment_modal .modal-dialog .modal-content form .modal-body fieldset select {
+        border: none;
+        border-bottom: solid 0.1rem black;
+        border-radius: 0%;
+        height: 2rem;
+        color: #626f2d;
+        caret-color: #626f2d;
+        background-color: transparent;
+    }
+
+    #add_account_modal .modal-dialog .modal-content form .modal-body fieldset textarea,
+    #add_recurring_payment_modal .modal-dialog .modal-content form .modal-body fieldset textarea,
+    #add_single_payment_modal .modal-dialog .modal-content form .modal-body fieldset textarea {
+        border: none;
+        border-bottom: solid 0.1rem black;
+        border-radius: 0%;
+        height: 3rem;
+        min-height: 2.25rem;
+        max-height: 4rem;
+        color: #626f2d;
+        caret-color: #626f2d;
+        background-color: transparent;
+    }
+
+    #add_account_modal .modal-dialog .modal-content form .modal-body fieldset textarea::placeholder,
+    #add_recurring_payment_modal .modal-dialog .modal-content form .modal-body fieldset input::placeholder,
+    #add_single_payment_modal .modal-dialog .modal-content form .modal-body fieldset input::placeholder {
+        font-size: 1rem;
+        line-height: 1rem;
+    }
+
+    .plot_container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+        margin: 2rem;
+    }
+
+    .history_title {
+        position: relative;
+        left: -5%
+    }
+
+    .history_container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 5rem;
+        margin-top: 2rem;
+    }
+
+    .payment_history {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        width: 100%;
+        height: 10rem;
+        overflow-y: scroll;
+    }
+
+    .amount_column,
+    .date_column {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        width: 45%;
+        height: fit-content;
+
+    }
+
+    .amount_column {
+        border-left: #626f2d solid 0.05rem;
+    }
+
+    .date_column {
+        border-right: #626f2d solid 0.05rem;
+    }
+
+
+
+    footer {
+        visibility: hidden;
+        position: fixed;
+        bottom: 0px;
+        width: 100%;
+    }
+
+    .is_disabled {
+        color: grey !important;
+        z-index: -333 !important;
+        cursor: not-allowed;
+    }
+
+    footer div {
+        display: flex;
+        margin: 0%;
+        background-color: black;
+        height: 6rem;
+        color: gray;
+        font-size: smaller;
+        flex-direction: column;
+        align-items: center;
+        vertical-align: middle;
+    }
+
+    footer div a {
+        color: #626f2d;
+    }
+
+    .alert {
+        margin: 0% !important;
+        margin-bottom: 0px !important;
+    }
+}

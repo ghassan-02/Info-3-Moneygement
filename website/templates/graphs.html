@@ -1,0 +1,58 @@
+{% extends 'base2.html' %}
+
+{%block section%}
+
+<section class="plot_container">
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+  <body>
+
+    <div id="myPlot" style="width:100%;max-width:700px"></div>
+
+    <script>
+      var xArray = {{ xaxis| tojson}};
+      var yArray = {{ yaxis| tojson}};
+
+      // Define Data
+      var data = [{
+        x: xArray,
+        y: yArray,
+        mode: "dots"
+      }];
+
+      // Define Layout
+      var layout = {
+        xaxis: { range: [1651564593000, 1651074993000], title: "Date" },
+        yaxis: { range: [0, 1500], title: "Amount paid" },
+        title: "Payments"
+      };
+
+      // Display using Plotly
+      Plotly.newPlot("myPlot", data, layout);
+    </script>
+</section>
+
+<h5 class="history_title">Payment History</h5>
+<section class="history_container">
+  <div class="payment_history">
+    <div class="date_column">
+      <h6><b>Payment Date</b></h6>
+      {%for i in history%}
+      <h6>{{i.paiddate}}</h6>
+      {% endfor %}
+    </div>
+    <div class="amount_column">
+      <h6><b>Payment Amount</b></h6>
+      {%for i in history%}
+      <h6>{{i.amount}} USD</h6>
+      {% endfor %}
+    </div>
+    
+  </div>
+</section>
+
+
+
+
+
+{% endblock %}

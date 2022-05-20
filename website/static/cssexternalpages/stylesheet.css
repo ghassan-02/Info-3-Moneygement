@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+@media(min-width: 1001px){
+
+    @keyframes blink_red {
+        0% {color: white; background-color: darkred;}
+        50% {color: red; background-color: transparent;}
+        100% {color: white; background-color: darkred;}
+    }
+    body{
+        margin: 0%;
+        font-family: PT Sans, open-sans !important;
+        display: flex;
+        flex-direction: column;
+    }
+
+    main{
+        height: 90rem;
+        overflow-y: scroll;
+    }
+
+
+  
+    #logout_button{
+        padding: 0.25rem;
+        border-radius: 2.5%;
+    }
+
+    #logout_button:hover{
+        background-color: darkred;
+        color: red;
+        animation: blink_red 3s ease-in-out;
+        animation-iteration-count: infinite;
+        padding: 0.25rem;
+        border-radius: 2.5%;
+    }
+
+    .navigation{
+        display: flex;
+        flex-direction: row;
+        background-color: rgb(0, 0, 0);
+        margin: 0%;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+
+    .navigation img{
+        height: 7rem;
+        width: 11rem;
+    }
+
+    .navigation ul{
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+        margin-right: 2rem;
+        flex-wrap: wrap;
+    }
+
+    .navigation ul a{
+        text-decoration: none;
+        color: white;
+        font-size: large;
+        margin: 0rem 1rem;
+    }
+
+    .navigation ul a:hover{
+        color: #626f2d;
+    }
+
+    main{
+        display: flex !important;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        margin-bottom: -0.25rem;
+        height: 100%;
+        align-items: center;
+    }
+
+    .title_container{
+        display: flex;
+        flex-direction: row;
+        background-color: #626f2d;
+        color: white;
+        padding: 1.5rem;
+        justify-self: flex-start;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+    }
+
+    fieldset{
+        display: flex;
+        flex-direction: column;
+        margin: 1rem 0.5rem;
+    }
+
+    input{
+        border: none;
+        border-bottom: solid 0.1rem black;
+        border-radius: 0%;
+        height: 2rem;
+        color: #626f2d;
+        caret-color: #626f2d;
+        background-color: transparent;
+    }
+
+    select{
+        border: none;
+        border-bottom: solid 0.1rem black;
+        border-radius: 0%;
+        height: 2rem;
+        color: #626f2d;
+        caret-color: #626f2d;
+        background-color: transparent;
+    }
+
+    textarea{
+        border: none;
+        border-bottom: solid 0.1rem black;
+        border-radius: 0%;
+        height: 3rem;
+        min-height: 2.25rem;
+        max-height: 4rem;
+        color: #626f2d;
+        caret-color: #626f2d;
+        background-color: transparent;
+    }
+    
+    textarea::placeholder{
+        font-size: 1rem;
+        line-height: 1rem;
+    }
+
+    form{
+        height: fit-content;
+        margin-bottom: 5rem;
+    }
+
+    form a{
+        display: flex;
+        justify-content: center;
+    }
+
+    .save_button{
+        display: flex;
+        flex-direction: row;
+        border: 1px #626f2d solid;
+        justify-content: space-around;
+        align-items: center;
+        border: none;
+        width: 10rem;
+        height: 2rem;
+        background-color: #626f2d;
+        color: white;
+        margin-top: 2rem;
+    }
+
+    .save_button:hover{
+        background-color: transparent;
+        color: #626f2d;
+        border: 1px #626f2d solid;
+        box-shadow: 0 1px 6px 0 rgba(32,33,36,0.28);
+    }
+
+    .accounts{
+        display: flex;
+        width: 90%;
+        height: 100%;
+        overflow-y: scroll;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+    .account_card{
+        border-radius: 4px;
+        box-shadow: 0 1px 6px 0 rgba(32,33,36,0.28);
+        border-color: rgba(223,225,229,0);
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        height: fit-content;
+        width: 25rem;
+        margin: 1rem;
+        padding: 0.5rem;
+        padding-right: 0%;
+    }
+
+    .account_section1{
+        width: 75%;
+        margin: 0%;
+    }
+    .account_title{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: baseline;
+        border-bottom: solid 0.75px black;
+    }
+
+    .account_title_text{
+        font-size: 1.5rem;
+        margin-right: 1rem;
+        font-weight: 500;
+    }
+
+    .account_type{
+        font-size: 1rem;
+        font-weight: 300;
+        font-style: italic;
+    }
+    
+    .account_info{
+        display: flex;
+        flex-direction: column;
+        margin: 0.5rem 0rem;
+    }
+    .account_description_title, .account_bal_title{
+        text-decoration: underline;
+        font-weight: 500;
+    }
+
+    .account_description{
+        height: 2.75rem;
+        overflow-y: scroll;
+        font-weight: 100;
+    }
+
+    .account_bal_cur{
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+    }
+
+    .account_balance{
+        font-size: 1.5rem;
+        font-weight: 500;
+        margin-right: 0.25rem;
+    }
+    .account_currency{
+        font-size: 1rem;
+        font-weight: 100;  
+        text-transform: uppercase;
+    }
+
+    .account_buttons{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        border-top: solid 0.75px black;
+        padding-top: 0.5rem;
+    }
+
+    .account_buttons button{
+        margin: 0%;
+    } 
+
+    footer{
+        position: relative;
+        top: 0rem;
+    }
+
+    footer div{
+        display: flex;
+        margin: 0%;
+        background-color: black;
+        height: 6rem;
+        color: gray;
+        font-size: smaller;
+        flex-direction: column;
+        align-items: center;
+        vertical-align: middle;
+    }
+
+    footer div a{
+        color: #626f2d;
+    }
+
+    .edit_fieldset_container{
+        display: flex;
+        width: 30rem;
+        height: 30rem;
+        margin-top: 2.5rem;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .transaction_fieldset_container{
+        display: flex;
+        width: 30rem;
+        height: 15rem;
+        margin-top: 2.5rem;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+    .alert{
+        margin: 0% !important;
+    }
+
+}

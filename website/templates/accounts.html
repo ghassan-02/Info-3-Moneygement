@@ -1,0 +1,120 @@
+{% extends 'base2.html'%}
+
+{% block section %}
+<section class='account_main_buttons'>
+    <a href='#'><button data-toggle="modal" data-target="#add_account_modal" type='button'>Add an account <img
+                src='../static/img/add.svg'></button></a>
+</section>
+
+
+<div class="modal fade" id="add_account_modal" data-backdrop="static" tabindex="-1" role="dialog"
+    aria-labelledby="staticBackdropLabel2" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel2">Add an Account</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action='' method="POST">
+                <div class="modal-body">
+                    <fieldset>
+                        <label for='account_input_name'>Account Name</label>
+                        <input id='account_input_name' type="text" name='account_input_name'
+                            placeholder="Enter a name for your account...">
+                    </fieldset>
+
+                    <fieldset>
+                        <label for='account_input_type'>Account Type</label>
+                        <select id='account_input_type' name='account_input_type'>
+                            <option value='bank'>Bank Account</option>
+                            <option value='online'>Online Account</option>
+                            <option value='cash'>Cash</option>
+                            <option value='other'>Other</option>
+                        </select>
+                    </fieldset>
+
+                    <fieldset>
+                        <label for='account_input_currency'>Account Currency</label>
+                        <select id='account_input_currency' name='account_input_currency'>
+                            <option value='usd'>USD</option>
+                            
+                        </select>
+                    </fieldset>
+
+                    <fieldset>
+                        <label for='account_input_balance'>Account Balance</label>
+                        <input id='account_input_balance' type="number" name='account_input_balance' placeholder="Enter your account's current balance...">
+                    </fieldset>
+
+                    <fieldset>
+                        <label for='account_input_description'>Account Description</label>
+                        <textarea id='account_input_description' name='account_input_description' placeholder="Enter a description for your account..."></textarea>
+                    </fieldset>
+
+                </div>
+                <div class="modal-footer">
+                    <a class='account_btn delete_btn' href='#'><button type="button"
+                            data-dismiss="modal">Cancel</button></a>
+                    <a class='account_btn' href='/YourAccounts'><button type="submit">Add Account</button></a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Add for loop here, lists all financial accounts owned by the user -->
+
+{% if names|length < 1 %}
+<h4>There are currently no accounts.</h4>
+{% else %}
+{% for a in user.accounts %}
+<section class='account_card'>
+    <section class='account_section1'>
+        <div class='account_title'>
+            <h4 class='account_title_text'>
+                {{ a.name }}
+            </h4>
+            <h4 class='account_type'>
+                {{ a.type }}
+            </h4>
+        </div>
+
+        <div class='account_info'>
+            <h6 class='account_description_title'>Description</h6>
+            <p class='account_description'>
+                {{ a.description }}
+            </p>
+            <p class='account_bal_title'>Balance</p>
+            <div class='account_bal_cur'>
+                <p class='account_balance'>
+                    {{ a.balance }}
+                </p>
+                <p class='account_currency'>
+                    {{ a.currency }}
+                </p>
+            </div>
+
+        </div>
+
+        <!-- add links to each button intead of # -->
+        <div class='account_buttons'>
+            <a class='account_btn' href='/AddTransaction/{{ a.id }}'><button type='button'>Add Transaction</button></a>
+            <a class='account_btn' href='/EditAccount/{{ a.id }}'><button type='button'>Edit Account</button></a>
+            <a class='account_btn delete_btn' href='/DeleteAccount/{{ a.id }}'><button type='button'>Delete Account</button></a>
+        </div>
+    </section>
+
+
+    <section class='account_section2'>
+        <div class='account_img'>
+            <!-- src should be changed according to account type, maybe use an if statement??-->
+            <img src='../static/img/type_bank_account.svg' alt='Account Image'>
+        </div>
+    </section>
+
+</section>
+{% endfor %}
+{% endif %}
+{% endblock %}

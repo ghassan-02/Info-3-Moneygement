@@ -1,0 +1,80 @@
+{% extends 'base2.html' %}
+{% block section %}
+<section class='payments_main_buttons'>
+    <a href='#'><button type='button' data-toggle="modal" data-target="#add_single_payment_modal">Send a message
+            <img src='../static/img/add.svg'></button></a>    
+</section>
+<div class="modal fade" id="add_single_payment_modal" data-backdrop="static" tabindex="-1" role="dialog"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Send</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action='' method="POST">
+                <div class="modal-body">
+                    <fieldset>
+                        <label for='message_destinator_email'>User email</label>
+                        <input id='message_destinator_email' type="email" name='message_destinator_email' placeholder="Destinator email">
+                    </fieldset>
+
+                    <fieldset>
+                        <label for='message_content'>Message content</label>
+                        <input id='message_content' type="text" name="message_content" required minlength="4" maxlength="300" placeholder="Message content">
+                    </fieldset>
+
+                    
+
+                </div>
+                <div class="modal-footer">
+                    <a class='payment_btn delete_btn' href='#'><button type="button"
+                            data-dismiss="modal">Cancel</button></a>
+                    <a class='payment_btn' href='/Inbox'><button type="submit">Send message</button></a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% if content < 1 %} <h4>There are no messages.</h4>
+    {% else %}
+    {% for m in user.inbox %}
+    <section class='message_container'>
+       
+        <div class='message_card'>
+            <h5 class='message_subtitle'>Sender</h5>
+            <div class='payment_title'>
+                <div class='messager_name'>
+                    <h4>
+                        {{ m.sender_name }}
+                    </h4>
+                    
+                </div>
+                
+            </div>
+            
+            <div class='message_info'>
+                <h5 class='message_subtitle'>Description</h5>
+                <p class='message_content'>
+                    {{ m.content }}
+                </p>
+                <div class='message_buttons'>
+                    <a class='payment_btn delete_btn' href='/DeleteMessage/{{ m.id }}'><button
+                            type='button'>Delete</button></a>
+                </div>
+            </div>
+            
+            
+           
+            
+        </div>
+
+        {% endfor %}
+        {% endif %}
+        {% endblock %}
+
+
+
