@@ -1,4 +1,3 @@
-from unicodedata import category
 from flask import Blueprint, render_template, flash, request, redirect, url_for
 from flask_login import login_required, current_user
 from .models import Account, Payment, Message, User, Payments_history
